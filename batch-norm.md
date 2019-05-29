@@ -8,4 +8,5 @@
   - One can propose a better BN scheme that works on ReLU/sigmoid that in  my opinion will give better results.
 - Batch Normalization has a small insignificant regularization effect because of the small noise introduced by the minibatches.
 - Batch Normalization helps solve the exploding/vanishing gradient problem by making the distribution of activations at each layer relatively stable which stabilizes the distribution of the weights too.
+- At test time, batch norm uses static mean and variance. This is done in a multitude of ways: Use mean, variance of the entire training set / maintain an exponentially weighted running average of mean and variance while training and use the values at end of training(won't this method localize to the last few iterations, hence bad?)
 
