@@ -16,3 +16,15 @@
 
 6. This is because the first one penalizes non-adherance to $y^{(i)}$ only if $y^{(i)}$ is $1$ ! If $y^{(i)}$ is $0$, then no matter how bad $\hat{y}^{(i)}$, there's no penalty. This won't give a very good model. If we penalize this too, as done in my second cost function, then we will get sharper results I think.
 
+7. Proof for derivative expression:
+   $$
+   \hat{y}=\frac{e^{z}}{\sum_{j=1}^{C}z_j} \\
+   L(\hat{y},y)=-\sum_{j=1}^{C}y_j\log{(\hat{y_j})} \\
+   \begin{align*}
+   \frac{\partial L}{\partial z_i}&=-\frac{y_i}{\hat{y_i}}\frac{\partial \hat{y_i}}{\partial z_i} - \sum_{j \neq i}\frac{y_j}{\hat{y_j}}\frac{\partial \hat{y_j}}{\partial z_i} \\
+   &= ... \\
+   &= \hat{y_i}\sum_{j=1}^{C}y_j - y_i \\
+   &= \hat{y_i} - y_i
+   \end{align*}
+   $$
+
