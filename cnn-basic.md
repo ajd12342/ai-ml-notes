@@ -1,0 +1,8 @@
+## Basic CNN ideas
+
+- The idea of a convolutional neural network is to make the machine learn *useful* features(like edges, parts of faces, etc.) on its own and then feed these features eventually into a fully-connected set of layers as usual.
+- This is fundamentally different from hand-engineered features as well as normal deep NNs in the following ways:
+  - Normal deep NNs allow arbitrary connections of arbitrary weights between subsequent layers(thus they have a lot of parameters). This almost always overfits the training set unless it is massively huge, and these NNs end up learning not very useful features for the general task but instead very specific features to excel at the training set.
+  - Hand-engineered features on the other hand, by definition, work well on the general task, but only when the person engineering it is able to capture the precise intricacies of the task, otherwise they are not very good. However, these features make sense and are generally useful.
+- CNNs, on the other hand, by using only a single filter as a learnable parameter for the entire image, end up learning *how to look* at small regions of the image to learn their meaning. They are less prone to overfitting and generate features that take only local information into account(in conv layers), the most important information(in max pooling), etc.
+- One interesting thing to think about is: why should a 3D-filter have same number of channels as the input? What happens when you use a thinner filter that gives you a 3D-output, rather than a 2D one i.e. it looks at only certain features at a time. This could introduce locality across the features, perhaps an interesting thing to try.
