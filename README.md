@@ -1,2 +1,2 @@
 # ai-ml-notes
-Originally written short notes for various AI/ML topics.
+Short notes, personal thoughts, intuitions for various AI/ML topics! Work in progress.
